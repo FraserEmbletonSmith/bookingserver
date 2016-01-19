@@ -3,9 +3,11 @@ var router = express.Router();
 
 var models = require("../models");
 
-/* GET home page. */
+/* GET all bookings as json. */
 router.get('/', function(req, res, next) {
-  res.send("Hi");
+  models.Booking.findAll().then(function(bookings){
+    res.json(bookings);
+  })
 });
 
 module.exports = router;
