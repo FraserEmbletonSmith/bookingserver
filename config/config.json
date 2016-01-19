@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
+    "username": "fraser",
+    "password": "Shirith46!",
+    "database": "booking",
+    "host": "fraserpersonaldb.c7btqjbbgzsv.us-west-2.rds.amazonaws.com:3306",
     "dialect": "mysql"
   },
   "test": {
