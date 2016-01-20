@@ -7,7 +7,25 @@ var models = require("../models");
 router.get('/', function(req, res, next) {
   models.Booking.findAll().then(function(bookings){
     res.json(bookings);
-  })
+  });
+});
+
+router.get('/:name', function(req, res, next){
+  models.Booking.findAll({
+    where: {
+      name: req.params.name
+    }
+  }).then(function(b){
+    res.json(b.name);
+  });
+});
+
+router.get('/create/:name', function(req, res, next){
+  models.Booking.create({
+    name: req.params.name
+  }).then(function(b){
+    res.json(b);
+  });
 });
 
 module.exports = router;
