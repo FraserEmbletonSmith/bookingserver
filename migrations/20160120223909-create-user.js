@@ -21,6 +21,11 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      bookingId: {
+        type: Sequelize.INTEGER,
+        alloNull: true,
+        references: {model: 'users', key: 'id'}
       }
     });
   },
