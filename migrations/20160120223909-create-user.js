@@ -25,7 +25,8 @@ module.exports = {
       bookingId: {
         type: Sequelize.INTEGER,
         alloNull: true,
-        references: {model: 'Booking', key: 'id'}
+        references: 'Bookings',
+        referencesKey: 'id'
       }
     });
   },
