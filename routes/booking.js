@@ -16,13 +16,13 @@ router.get('/:name', function(req, res, next){
       name: req.params.name
     }
   }).then(function(b){
-    res.json(b.name);
+    res.json(b);
   });
 });
 
-router.get('/create/:name', function(req, res, next){
+router.post('/create', function(req, res, next){
   models.Booking.create({
-    name: req.params.name
+    name: req.body.name
   }).then(function(b){
     res.json(b);
   });
