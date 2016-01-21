@@ -7,12 +7,12 @@ module.exports = {
                             type: Sequelize.INTEGER,
                             allowNull: true,
                             references:{model: 'Users',
-                                        key: 'id'})
+                                        key: 'id'});
 
   },
 
   down: function (queryInterface, Sequelize) {
     queryInterface.removeColumn('Bookings',
-                                'UserId')
+                                'UserId');
   }
 };
