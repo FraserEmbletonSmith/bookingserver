@@ -2,7 +2,7 @@
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
-    queryInterface.addColumn('Bookings',
+    return queryInterface.addColumn('Bookings',
                               'UserId',
                             type: Sequelize.INTEGER,
                             allowNull: true,
@@ -12,7 +12,7 @@ module.exports = {
   },
 
   down: function (queryInterface, Sequelize) {
-    queryInterface.removeColumn('Bookings',
+    return queryInterface.removeColumn('Bookings',
                                 'UserId');
   }
 };
