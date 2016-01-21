@@ -3,11 +3,11 @@
 module.exports = {
   up: function (queryInterface, Sequelize) {
     return queryInterface.addColumn('Bookings',
-                              'UserId',
+                              'UserId',{
                             type: Sequelize.INTEGER,
                             allowNull: true,
                             references:{model: 'Users',
-                                        key: 'id'});
+                                        key: 'id'}});
 
   },
 
