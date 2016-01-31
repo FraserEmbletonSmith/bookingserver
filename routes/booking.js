@@ -20,12 +20,19 @@ router.get('/:name', function(req, res, next){
   });
 });
 
-router.post('/create', function(req, res, next){
+router.post('/book', function(req, res, next){
+  var user = models.User.findAll(
+    {where:{
+    email: req.body.email
+  }
+});
+
   models.Booking.create({
-    name: req.body.name
+    name: req.body.name,
+    userId: user.id
   }).then(function(b){
     res.json(b);
-  });
+  })
 });
 
 module.exports = router;

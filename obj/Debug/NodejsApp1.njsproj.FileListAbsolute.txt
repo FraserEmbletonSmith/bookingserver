@@ -1,0 +1,2 @@
+C:\Users\Fraser\code\MEAN\booking\server\bookingserver\obj\Debug\NodejsApp1.njsprojResolveAssemblyReference.cache
+C:\Users\Fraser\code\MEAN\booking\server\bookingserver\bin\Microsoft.NodejsTools.WebRole.dll
