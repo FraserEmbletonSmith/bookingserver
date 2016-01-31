@@ -5,8 +5,8 @@ module.exports = {
     return queryInterface.addColumn('Users',
                               'password',{
                             type: Sequelize.STRING,
-                            allowNull: true,
-  },
+                            allowNull: true}
+ )},
 
   down: function (queryInterface, Sequelize) {
     return queryInterface.removeColumn('Users',
