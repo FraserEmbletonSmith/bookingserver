@@ -5,7 +5,8 @@
     "database": "booking",
     "host": "fraserpersonaldb.c7btqjbbgzsv.us-west-2.rds.amazonaws.com",
     "dialect": "mysql",
-    "port": "3306"
+    "port": "3306",
+    "secret": "areallysecretthingie"
   },
   "test": {
     "username": "root",

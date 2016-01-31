@@ -21,9 +21,10 @@ router.get('/:name', function(req, res, next){
   })
 });
 
-router.get('/create/:name/:email', function(req, res, next){
+router.post('/create/:name/:email', function(req, res, next){
   models.User.create({
     name: req.params.name,
+    password: req.body.password,
     email: req.params.email
   }).then(function(user){
     res.json(user);

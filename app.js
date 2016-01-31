@@ -5,12 +5,18 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var jade = require('jade');
+var jwt = require ('express-jwt');
+var config = require('./config/config.json')['development']
+
+var jwtCheck = jwt({
+  secret: config.secret
+});
 
 
 
 var booking = require('./routes/booking');
 var user = require('./routes/user');
-
+var auth = require('./routes/authentication');
 var app = express();
 
 //views
@@ -31,9 +37,11 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-
+app.use(jwtCheck.unless({path: ['/auth/login']}));
+app.use('/auth', auth);
 app.use('/booking', booking);
 app.use('/user', user);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
